@@ -31,6 +31,11 @@ document.querySelector('#new-todo').addEventListener('submit', (e) => {
     }
 })
 
+document.querySelector('button[class="button_delete"]').addEventListener('click', () => {
+    localStorage.removeItem('todos')
+    location.reload()
+})
+
 document.querySelector('#hide-completed').addEventListener('change', (e) => {
     setFilters({
         hideCompleted: e.target.checked,

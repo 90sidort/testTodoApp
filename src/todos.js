@@ -56,8 +56,6 @@ const editTodo = (id) => {
     const getBtnWrap = document.querySelector(`div[id="buttons_${id}"]`)
     const getEditButton = document.querySelector(`button[id="${id}"]`)
     const getPrrtButton = document.querySelector(`button[id="priority_${id}"]`)
-    console.log(getEditButton)
-    console.log(getPrrtButton)
     getTodoSpan.remove()
     getEditButton.disabled = true
     getPrrtButton.disabled = true
