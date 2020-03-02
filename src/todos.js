@@ -25,7 +25,8 @@ const createTodo = (text) => {
     todos.push({
         id: uuidv4(),
         text,
-        completed: false
+        completed: false,
+        priority: false
     })
     saveTodos()
 }
@@ -37,6 +38,16 @@ const removeTodo = (id) => {
         todos.splice(todoIndex, 1)
         saveTodos()
     }
+}
+
+const setPriority = (id) => {
+    const todo = todos.find((todo) => todo.id === id)
+    if (todo.priority) {
+        todo.priority = false
+    } else {
+        todo.priority = true
+    }
+    saveTodos()
 }
 
 const editTodo = (id) => {
@@ -78,4 +89,4 @@ const toggleTodo = (id) => {
 
 loadTodos()
 
-export { loadTodos, getTodos, createTodo, removeTodo, toggleTodo, editTodo }
+export { loadTodos, getTodos, createTodo, removeTodo, toggleTodo, editTodo, setPriority }

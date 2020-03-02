@@ -1,4 +1,4 @@
-import { getTodos, toggleTodo, removeTodo, editTodo } from './todos'
+import { getTodos, toggleTodo, removeTodo, editTodo, setPriority } from './todos'
 import { getFilters } from './filters'
 
 // Render application todos based on filters
@@ -37,6 +37,7 @@ const generateTodoDOM = (todo) => {
     const todoText = document.createElement('span') 
     const removeButton = document.createElement('button')
     const editButton = document.createElement('button')
+    const priorityButton = document.createElement('button')
 
     // Setup todo checkbox
     checkbox.setAttribute('type', 'checkbox')
@@ -61,6 +62,11 @@ const generateTodoDOM = (todo) => {
     containerBtn.setAttribute('style', 'display:flex;')
     containerEl.setAttribute('id', `div_${todo.id}`)
     containerBtn.setAttribute('id', `buttons_${todo.id}`)
+    if (todo.priority) {
+        todoEl.setAttribute('style', 'background-color:#9d6381;')
+    } else {
+        todoEl.setAttribute('style', 'background-color:#353239;')
+    }
     todoEl.appendChild(containerEl)
 
     // Setup the remove button
@@ -81,9 +87,19 @@ const generateTodoDOM = (todo) => {
         editTodo(todo.id)
     })
     todoEl.appendChild(containerBtn)
+
+    // Setup the priority button
+    priorityButton.textContent = 'priority'
+    priorityButton.classList.add('button', 'button--text')
+    priorityButton.setAttribute('id', `priority_${todo.id}`)
+    containerBtn.appendChild(priorityButton)
+    priorityButton.addEventListener('click', () => {
+        setPriority(todo.id)
+        renderTodos()
+    })
+
     return todoEl
 }
-
 // Get the DOM elements for list summary
 const generateSummaryDOM = (incompleteTodos) => {
     const summary = document.createElement('h2')
