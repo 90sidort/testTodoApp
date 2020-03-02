@@ -86,7 +86,6 @@ const generateTodoDOM = (todo) => {
     editButton.addEventListener('click', () => {
         editTodo(todo.id)
     })
-    todoEl.appendChild(containerBtn)
 
     // Setup the priority button
     priorityButton.textContent = 'priority'
@@ -98,6 +97,7 @@ const generateTodoDOM = (todo) => {
         renderTodos()
     })
 
+    todoEl.appendChild(containerBtn)
     return todoEl
 }
 // Get the DOM elements for list summary

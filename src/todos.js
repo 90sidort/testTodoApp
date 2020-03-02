@@ -54,7 +54,13 @@ const editTodo = (id) => {
     const getTodoSpan = document.querySelector(`span[id="${id}"]`)
     const getDivWrap = document.querySelector(`div[id="div_${id}"]`)
     const getBtnWrap = document.querySelector(`div[id="buttons_${id}"]`)
+    const getEditButton = document.querySelector(`button[id="${id}"]`)
+    const getPrrtButton = document.querySelector(`button[id="priority_${id}"]`)
+    console.log(getEditButton)
+    console.log(getPrrtButton)
     getTodoSpan.remove()
+    getEditButton.disabled = true
+    getPrrtButton.disabled = true
     const editTodoField = document.createElement('input')
     const editTodoSave = document.createElement('button')
     editTodoSave.setAttribute('id', `save_${id}`)
@@ -72,6 +78,8 @@ const editTodo = (id) => {
             todo.text = editTodoField.value
         }
         saveTodos()
+        getEditButton.disabled = false
+        getPrrtButton.disabled = false
         renderTodos()
     })
 }
