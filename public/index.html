@@ -16,10 +16,10 @@
 
         <div class="actions">
             <div class="actions__container">
-                <input id="search-text" class="input" type="text" placeholder="Filter todos">
+                <input id="search-text" class="input" type="text" placeholder="Filter todos" data-test="todoApp_filterInput">
                 <label class="checkbox">
-                    <input type="checkbox" id="hide-completed"> Hide completed
-                    <input type="checkbox" id="completed-only" style="margin-left: 10px;"> Completed only
+                    <input type="checkbox" id="hide-completed" data-test="todoApp_hideCompleted"> Hide completed
+                    <input type="checkbox" id="completed-only" style="margin-left: 10px;" data-test="todoApp_completedOnly"> Completed only
                 </label>
             </div>
         </div>
@@ -27,11 +27,11 @@
         <div class="container">
             <div class="container" id="location">
             </div>
-            <div id="todos"></div>
+            <div id="todos" data-test="todoApp_todosDiv"></div>
             <form id="new-todo">
-                <input type="text" class="input" placeholder="Something to do" name="text">
-                <button class="button">Add Todo</button>
-                <button class="button_delete">Delete all</button>
+                <input type="text" class="input" placeholder="Something to do" name="text" data-test="todoApp_addInput">
+                <button class="button" data-test="todoApp_addButton">Add Todo</button>
+                <button class="button_delete" data-test="todoApp_deleteButton">Delete all</button>
             </form>
         </div>
 

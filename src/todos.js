@@ -62,10 +62,12 @@ const editTodo = (id) => {
     const editTodoField = document.createElement('input')
     const editTodoSave = document.createElement('button')
     editTodoSave.setAttribute('id', `save_${id}`)
+    editTodoSave.setAttribute('data-test', 'todoApp_saveBtn')
     editTodoSave.textContent = 'save'
     editTodoSave.classList.add('button', 'button--text')
     editTodoField.setAttribute('style', 'background:#3d3941; color:#fafafa; width:98%;')
     editTodoField.setAttribute('id', id)
+    editTodoField.setAttribute('data-test', 'todoApp_editInput')
     getDivWrap.appendChild(editTodoField)
     getBtnWrap.appendChild(editTodoSave)
     editTodoSave.addEventListener('click', () => {

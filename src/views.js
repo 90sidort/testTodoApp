@@ -23,6 +23,7 @@ const renderTodos = () => {
     } else {
         const messageEl = document.createElement('p')
         messageEl.classList.add('empty-message')
+        messageEl.setAttribute('data-test', 'todoApp_noTodos')
         messageEl.textContent = 'There are no to-dos to show'
         todoEl.appendChild(messageEl)
     }
@@ -42,6 +43,7 @@ const generateTodoDOM = (todo) => {
     // Setup todo checkbox
     checkbox.setAttribute('type', 'checkbox')
     checkbox.setAttribute('id', todo.id)
+    checkbox.setAttribute('data-test', `todoApp_check_${todo.text}`)
     checkbox.checked = todo.completed
     containerEl.appendChild(checkbox)
     checkbox.addEventListener('change', () => {
@@ -53,6 +55,7 @@ const generateTodoDOM = (todo) => {
     todoText.textContent = todo.text
     todoText.setAttribute('style', 'display:block; word-wrap:break-word; width:98%')
     todoText.setAttribute('id', todo.id)
+    todoText.setAttribute('data-test', `todoApp_span_${todo.text}`)
     containerEl.appendChild(todoText)
 
     // Setup containers
@@ -62,6 +65,7 @@ const generateTodoDOM = (todo) => {
     containerBtn.setAttribute('style', 'display:flex;')
     containerEl.setAttribute('id', `div_${todo.id}`)
     containerBtn.setAttribute('id', `buttons_${todo.id}`)
+    todoEl.setAttribute('data-test', `todoApp_label_${todo.text}`)
     if (todo.priority) {
         todoEl.setAttribute('style', 'background-color:#9d6381;')
     } else {
@@ -72,6 +76,7 @@ const generateTodoDOM = (todo) => {
     // Setup the remove button
     removeButton.textContent = 'remove'
     removeButton.classList.add('button', 'button--text')
+    removeButton.setAttribute('data-test', `todoApp_remove_${todo.text}`)
     containerBtn.appendChild(removeButton)
     removeButton.addEventListener('click', () => {
         removeTodo(todo.id)
@@ -81,6 +86,7 @@ const generateTodoDOM = (todo) => {
     // Setup the edit button
     editButton.textContent = 'edit'
     editButton.classList.add('button', 'button--text')
+    editButton.setAttribute('data-test', `todoApp_edit_${todo.text}`)
     editButton.setAttribute('id', todo.id)
     containerBtn.appendChild(editButton)
     editButton.addEventListener('click', () => {
@@ -91,6 +97,7 @@ const generateTodoDOM = (todo) => {
     priorityButton.textContent = 'priority'
     priorityButton.classList.add('button', 'button--text')
     priorityButton.setAttribute('id', `priority_${todo.id}`)
+    priorityButton.setAttribute('data-test', `todoApp_priority_${todo.text}`)
     containerBtn.appendChild(priorityButton)
     priorityButton.addEventListener('click', () => {
         setPriority(todo.id)
@@ -105,6 +112,7 @@ const generateSummaryDOM = (incompleteTodos) => {
     const summary = document.createElement('h2')
     const plural = incompleteTodos.length === 1 ? '' : 's'
     summary.classList.add('list-title')
+    summary.setAttribute('data-test', 'todoApp_counter')
     summary.textContent = `You have ${incompleteTodos.length} todo${plural} left`
     return summary
 }

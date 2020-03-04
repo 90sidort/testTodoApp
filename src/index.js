@@ -11,6 +11,7 @@ const locationDiv = document.querySelector('div[id="location"]')
 const locationH2 = document.createElement('h2')
 let locationData
 locationH2.setAttribute('class', 'header__subtitle')
+locationH2.setAttribute('data-test', 'todoApp_locationHeader')
 locationH2.setAttribute('style', 'margin-top: 2%; font-size:1.0rem')
 
 document.querySelector('#search-text').addEventListener('input', (e) => {
