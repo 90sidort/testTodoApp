@@ -54,3 +54,9 @@ Cypress.Commands.add("storageTodo", () => {
     window.localStorage.setItem('todos', JSON.stringify(threeTodos));
     cy.wait(actionWait);
 })
+
+// This function (as a command) checks todos
+Cypress.Commands.add("checkTodo", (name) => {
+    cy.get(`input[data-test="todoApp_check_${name}"]`).click();
+    cy.wait(actionWait);
+})
