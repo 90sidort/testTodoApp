@@ -19,4 +19,4 @@ List of my features:
 - localization and IP information displayed (to demonstrate fetch polyfill and mocking)
 
 Application was created for demonstration purposes only so please do not judge the code. 
-Same goes for Cypress tests- they are not the optimal version- just to demonstrate different ways in which Cypress can help automated tests.
+Same goes for Cypress tests- they are not the optimal version- just to demonstrate different ways in which Cypress can help automated testing.
