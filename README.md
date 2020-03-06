@@ -1,6 +1,7 @@
 # testTodoApp
 This is a todo app for auto tests demonstration purpose
 This repo contains simple Todo App based on The Modern JavaScript Bootcamp by Andrew Mead and cypress test that I have created for it. 
+
 To run:
 1. Download or clone repository
 2. Run Git Bash in todo-app folder
@@ -9,6 +10,7 @@ To run:
 5. Type "npm test" in new Git Bash instance (in todo-app folder as well).
 OR
 6. Type "npx cypress open" and run test manually in Cypress runner 
+
 List of my features:
 - mark todo as high priority
 - unmark to do as high priority
