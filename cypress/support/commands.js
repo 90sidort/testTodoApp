@@ -4,7 +4,7 @@ import {
     standardBckgrnd,
     addInput,
     addButton,
-    threeTodos,
+    priorityBttn,
     actionWait,
     deleteText,
 } from './variables'
@@ -43,6 +43,16 @@ Cypress.Commands.add("addTodo", (name) => {
 Cypress.Commands.add("deleteTodo", (num) => {
     while(num > 0){
         cy.get('button').contains(deleteText).eq(0).click();
+        cy.wait(actionWait);
+        num--;
+    };
+    cy.wait(actionWait);
+});
+
+// This function (as a command) clicks priority button by todo
+Cypress.Commands.add("prioritizeTodo", (num) => {
+    while(num > 0){
+        cy.get(priorityBttn).eq(num-1).click();
         cy.wait(actionWait);
         num--;
     };

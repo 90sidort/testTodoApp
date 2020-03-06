@@ -97,7 +97,7 @@ const generateTodoDOM = (todo) => {
     priorityButton.textContent = 'priority'
     priorityButton.classList.add('button', 'button--text')
     priorityButton.setAttribute('id', `priority_${todo.id}`)
-    priorityButton.setAttribute('data-test', `todoApp_priority_${todo.text}`)
+    priorityButton.setAttribute('data-test', `todoApp_priority`)
     containerBtn.appendChild(priorityButton)
     priorityButton.addEventListener('click', () => {
         setPriority(todo.id)
