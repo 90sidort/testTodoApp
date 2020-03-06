@@ -19,6 +19,7 @@ import {
     todoTest3,
     todoCounter4,
     test4String,
+    threeTodos,
 } from '../../support/variables';
 
 describe('Cypress demo tests- saving and deleting todos', () => {
@@ -71,7 +72,7 @@ describe('Cypress demo tests- saving and deleting todos', () => {
             .next(todoTest3);
         });
     it('It should be possible to add new todo when there are existing ones already, cunter should be updated', () => {
-        cy.storageTodo();
+        cy.storageTodo(threeTodos);
         cy.visit('/');
         cy.validateTodo(test1String);
         cy.addTodo(test4String);
@@ -79,14 +80,14 @@ describe('Cypress demo tests- saving and deleting todos', () => {
         cy.get(todoCounter).should('have.text', todoCounter4);
         });
     it('It should be possible to delete all todos one by one, cunter should be updated', () => {
-        cy.storageTodo();
+        cy.storageTodo(threeTodos);
         cy.visit('/');
         cy.validateTodo(test1String);
         cy.deleteTodo(3);
         cy.get(todoCounter).should('have.text', todoCounter0);
         });
     it('It should be possible to delete all todos by clicking delete all, cunter should be updated', () => {
-        cy.storageTodo();
+        cy.storageTodo(threeTodos);
         cy.visit('/');
         cy.validateTodo(test1String);
         cy.get(deleteButton).click();

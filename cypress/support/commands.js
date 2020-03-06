@@ -50,8 +50,8 @@ Cypress.Commands.add("deleteTodo", (num) => {
 });
 
 // This function (as a command) adds todos programatically to local storage
-Cypress.Commands.add("storageTodo", () => {
-    window.localStorage.setItem('todos', JSON.stringify(threeTodos));
+Cypress.Commands.add("storageTodo", (todoMock) => {
+    window.localStorage.setItem('todos', JSON.stringify(todoMock));
     cy.wait(actionWait);
 })
 
