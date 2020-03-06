@@ -51,6 +51,13 @@ describe('Cypress demo tests- saving and deleting todos', () => {
             cy.get(todoCounter).should('have.text', todoCounter1);
             });
         });
+    it('It should be impossible to add new to-do with no text', () => {
+        cy.visit('/');
+        cy.get(todoCounter).should('have.text', todoCounter0).then(() => {
+            cy.get(addInput).type(`{enter}`);
+            cy.get(todoCounter).should('have.text', todoCounter0);
+            });
+        });
     it('It should be possible to delete newly added to-do, counter should equal 0 afterwards', () => {
         cy.visit('/');
         cy.addTodo(test1String);
