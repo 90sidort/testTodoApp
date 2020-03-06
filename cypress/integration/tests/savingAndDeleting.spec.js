@@ -25,8 +25,8 @@ import {
 describe('Cypress demo tests- saving and deleting todos', () => {
     it('When there are no todos, message should be displayed and counter shoud equal 0', () => {
         cy.visit('/');
-        cy.get(noTodos).should('have.text', noTodosText)
-        cy.get(todoCounter).should('have.text', todoCounter0)
+        cy.get(noTodos).should('have.text', noTodosText);
+        cy.get(todoCounter).should('have.text', todoCounter0);
         });
     it('Location and IP should be displayed correctly', () => {
         cy.polyfillFetch();
@@ -56,7 +56,7 @@ describe('Cypress demo tests- saving and deleting todos', () => {
         cy.addTodo(test1String);
         cy.validateTodo(test1String);
         cy.deleteTodo(1);
-        cy.get(todoCounter).should('have.text', todoCounter0)
+        cy.get(todoCounter).should('have.text', todoCounter0);
         });
     it('It should be possible to add multiple to-dos, to-dos should be sorted from oldest to newest', () => {
         cy.visit('/');

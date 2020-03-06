@@ -3,27 +3,16 @@ import {
     filterInput, 
     hideCompleted,
     completedOnly,
-    locationHeader,
     todoCounter,
-    addInput,
-    addButton,
-    deleteButton,
     noTodosText,
     todoCounter0,
     test1String,
-    locationDataMock,
-    locationDataURL,
-    testLocation,
-    todoCounter1,
     test2String,
     test3String,
-    labelTodos,
     todoTest1, 
     todoTest2,
     todoTest3,
-    todoCounter4,
     test4String,
-    actionWait,
     deleteText,
     todoCounter3,
     threeTodosChckd,
@@ -145,6 +134,14 @@ describe('Cypress demo tests- filtering and checking todos', () => {
         cy.validateTodo(test3String);
         cy.validateTodo(test2String);
         cy.validateTodo(test1String);
+        });
+    it('It should display no todos if text in filter does not match', () => {
+        cy.storageTodo(fourTodosPartly);
+        cy.visit('/');
+        cy.validateTodo(test1String);
+        cy.get(filterInput).type(deleteText);
+        cy.get(noTodos).should('have.text', noTodosText);
+        cy.get(todoCounter).should('have.text', todoCounter0);
         });
     it('It should be possible to filter todos by text when hide completed selected', () => {
         cy.storageTodo(fourTodosPartly);
