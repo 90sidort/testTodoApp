@@ -1,4 +1,5 @@
 {
     "baseUrl": "http://localhost:8080/",
-    "supportFile": "cypress/support/index.js"
+    "supportFile": "cypress/support/index.js",
+    "video": false
 }

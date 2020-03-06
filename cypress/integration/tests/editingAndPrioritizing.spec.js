@@ -14,7 +14,7 @@ import {
     priorityBttn,
     mCText,
 } from '../../support/variables';
-describe('Cypress demo tests- editing todos', () => {
+describe('Cypress demo tests- editing and prioritizing todos', () => {
     it('It should be possible to mark todo as high priority', () => {
         cy.storageTodo(threeTodos);
         cy.visit('/');
