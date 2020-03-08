@@ -1,6 +1,6 @@
 # testTodoApp
 This is a todo app for auto tests demonstration purposes.
-This repo contains simple Todo App based on The Modern JavaScript Bootcamp by Andrew Mead and cypress test that I have created for it. 
+This repo contains simple Todo App based on The Modern JavaScript Bootcamp by Andrew Mead and cypress tests that I have created for it. 
 
 To run:
 1. Download or clone repository
